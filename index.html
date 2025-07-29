@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traffic Light</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: skyblue;
+      font-family: sans-serif;
+    }
+
+    h2 {
+      font-size: 35px;
+      color: darkblue;
+    }
+
+    .signal {
+      background-color: #222;
+      width: 70px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    .light {
+      width: 70px;
+      height: 70px;
+      background-color: grey;
+      margin: 15px auto;
+      border-radius: 50%;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      margin-top: 40px;
+      border-radius: 20px;
+      border: none;
+      color: rgb(8, 8, 8);
+      height: 50px;
+      width: 100px;
+    }
+
+    .stop-btn {
+      background-color: red;
+    }
+
+    .ready-btn {
+      background-color: yellow;
+    }
+
+    .go-btn {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Traffic Light</h2>
+
+  <div class="signal">
+    <div id="red" class="light"></div>
+    <div id="yellow" class="light"></div>
+    <div id="green" class="light"></div>
+  </div>
+
+  <div>
+    <!-- <button class="stop-btn" onclick="stopLight()">Stop</button>
+    <button class="ready-btn" onclick="readyLight()">Ready</button>
+    <button class="go-btn" onclick="goLight()">Go</button> -->
+
+    <button class="stop-btn" onclick="toggleRed()">Stop</button>
+    <button class="ready-btn" onclick="toggleYellow()">Ready</button>
+    <button class="go-btn" onclick="toggleGreen()">Go</button>
+
+  </div>
+
+  <script>
+    // Select lights after the DOM is loaded
+    // const redLight = document.getElementById("red");
+    // const yellowLight = document.getElementById("yellow");
+    // const greenLight = document.getElementById("green");
+
+    // function stopLight() {
+    //   redLight.style.backgroundColor = "red";
+    //   yellowLight.style.backgroundColor = "grey";
+    //   greenLight.style.backgroundColor = "grey";
+    // }
+
+    // function readyLight() {
+    //   redLight.style.backgroundColor = "grey";
+    //   yellowLight.style.backgroundColor = "yellow";
+    //   greenLight.style.backgroundColor = "grey";
+    // }
+
+    // function goLight() {
+    //   redLight.style.backgroundColor = "grey";
+    //   yellowLight.style.backgroundColor = "grey";
+    //   greenLight.style.backgroundColor = "green";
+    // }
+
+    const red = document.getElementById("red");
+    const yellow = document.getElementById("yellow");
+    const green = document.getElementById("green");
+
+    function toggleRed() {
+      const isRedOn = red.style.backgroundColor === "red";
+      red.style.backgroundColor = isRedOn ? "grey" : "red";
+      yellow.style.backgroundColor = "grey";
+      green.style.backgroundColor = "grey";
+    }
+
+    function toggleYellow() {
+      const isYellowOn = yellow.style.backgroundColor === "yellow";
+      red.style.backgroundColor = "grey";
+      yellow.style.backgroundColor = isYellowOn ? "grey" : "yellow";
+      green.style.backgroundColor = "grey";
+    }
+
+    function toggleGreen() {
+      const isGreenOn = green.style.backgroundColor === "green";
+      red.style.backgroundColor = "grey";
+      yellow.style.backgroundColor = "grey";
+      green.style.backgroundColor = isGreenOn ? "grey" : "green";
+    }
+  </script>
+
+</body>
+</html>
